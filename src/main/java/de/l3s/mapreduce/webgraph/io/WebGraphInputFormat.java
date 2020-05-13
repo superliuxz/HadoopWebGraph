@@ -74,7 +74,7 @@ public class WebGraphInputFormat extends InputFormat<IntWritable, IntArrayWritab
 
         @Override
         public void close() throws IOException {
-            iterator.close();
+            if (iterator != null) iterator.close();
             graph.close();
         }
     }
